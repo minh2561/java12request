@@ -1,0 +1,13 @@
+updateStatus: không được update trường đã có trong DV:level, nameUpdate
+getStatus: sắp xếp theo level
+
+
+
+getUser: sắp xếp theo level trước, rồi theo thời gian update
+updateUser: xét lại cả trường, trừ create_at. update_at cập nhật theo thời gian vừa update
+
+
+getUser: lấy ra 1 phần tử có level thấp nhất
+update: update lại level của user, update theo thời gian
+
+updateOne: chỉ update level, update_at

@@ -26,12 +26,12 @@ public class RoleController {
         return new ResponseEntity<>(roleService.create(RoleIn),HttpStatus.CREATED);
     }
 
-    @DeleteMapping("/delete/{Id_Role}")
+    @DeleteMapping("/{Id_Role}")
     public ResponseEntity<?>delete(@PathVariable Integer Id_Role){
         return new ResponseEntity<>(roleService.delete(Id_Role),HttpStatus.OK);
     }
 
-    @PutMapping("/update/{Id_Role}")
+    @PutMapping("/{Id_Role}")
     public ResponseEntity<?>update(@PathVariable Integer Id_Role, @RequestBody RoleIn RoleIn){
         return new ResponseEntity<>(roleService.update(Id_Role, RoleIn),HttpStatus.OK);
     }

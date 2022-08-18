@@ -25,12 +25,12 @@ public class StatusController {
         return new ResponseEntity<>(statusService.create(StatusIn),HttpStatus.CREATED);
     }
 
-    @DeleteMapping("/delete/{Id_Status}")
-    public ResponseEntity<?>delete(@PathVariable Integer Id_Status){
-        return new ResponseEntity<>(statusService.delete(Id_Status),HttpStatus.OK);
-    }
+//    @DeleteMapping("/{Id_Status}")
+//    public ResponseEntity<?>delete(@PathVariable Integer Id_Status){
+//        return new ResponseEntity<>(statusService.delete(Id_Status),HttpStatus.OK);
+//    }
 
-    @PutMapping("/update/{Id_Status}")
+    @PutMapping("/{Id_Status}")
     public ResponseEntity<?>update(@PathVariable Integer Id_Status, @RequestBody StatusIn StatusIn){
         return new ResponseEntity<>(statusService.update(Id_Status, StatusIn),HttpStatus.OK);
     }

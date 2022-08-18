@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 @Service
 public interface UserService {
     responPage getAll();
+    responPage getOne();
     respon create (UserIn UserIn);
     respon delete (Integer Id_User);
     respon update (Integer Id_User, UserIn UserIn);

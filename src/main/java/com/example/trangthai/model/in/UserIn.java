@@ -10,5 +10,5 @@ import lombok.NoArgsConstructor;
 public class UserIn {
     private String name_user;
     private Integer level;
-    private Integer Id_Account;
+    private Integer id_Account;
 }

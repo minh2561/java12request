@@ -13,8 +13,8 @@ public class RoleMapper {
 
     public static RoleDto mapEntity(RoleEntity RoleEntity){
         RoleDto RoleDto = new RoleDto();
-        RoleDto.setId_Role(RoleDto.getId_Role());
-        RoleDto.setName_role(RoleDto.getName_role());
+        RoleDto.setId_Role(RoleEntity.getId_Role());
+        RoleDto.setName_role(RoleEntity.getName_role());
         return RoleDto;
     }
 }

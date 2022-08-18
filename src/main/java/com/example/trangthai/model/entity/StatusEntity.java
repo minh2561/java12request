@@ -1,8 +1,10 @@
 package com.example.trangthai.model.entity;
 
+import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.jpa.repository.Query;
 
 import javax.persistence.*;
 import java.util.Collection;
@@ -18,12 +20,18 @@ public class StatusEntity {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer Id_Status;
 
-    @Column(length = 64)
+    @Column(length =64,unique = true,nullable = false)
     private String name_Status;
 
-    @Column
+    @Column(unique = true,nullable = false)
     private Integer level;
-//    @Column
-//    @OneToMany (mappedBy = "UserEntity", cascade = CascadeType.MERGE,fetch = FetchType.EAGER)
-//    private Collection<UserEntity> UserEntity;
+
+    @OneToMany(mappedBy = "StatusEntity", cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
+    private Collection<UserEntity> userEntities;
+
+    @PreRemove
+    private void preRemove() {
+        userEntities.forEach(userEntity -> userEntity.setStatusEntity(null));
+    }
+
 }

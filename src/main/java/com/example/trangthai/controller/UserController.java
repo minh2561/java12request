@@ -9,7 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
-@RequestMapping("Controller")
+@RequestMapping("User")
 @CrossOrigin("*")
 public class UserController {
     @Autowired
@@ -20,17 +20,22 @@ public class UserController {
         return new ResponseEntity<>(userService.getAll(), HttpStatus.OK);
     }
 
+    @GetMapping("/getOne")
+    public ResponseEntity<?> getOne() {
+        return new ResponseEntity<>(userService.getOne(), HttpStatus.OK);
+    }
+    
     @PostMapping("")
     public ResponseEntity<?>create(@RequestBody UserIn UserIn){
         return new ResponseEntity<>(userService.create(UserIn),HttpStatus.CREATED);
     }
 
-    @DeleteMapping("/delete/{Id_User}")
+    @DeleteMapping("/{Id_User}")
     public ResponseEntity<?>delete(@PathVariable Integer Id_User){
         return new ResponseEntity<>(userService.delete(Id_User),HttpStatus.OK);
     }
 
-    @PutMapping("/update/{Id_User}")
+    @PutMapping("/{Id_User}")
     public ResponseEntity<?>update(@PathVariable Integer Id_User, @RequestBody UserIn UserIn){
         return new ResponseEntity<>(userService.update(Id_User, UserIn),HttpStatus.OK);
     }

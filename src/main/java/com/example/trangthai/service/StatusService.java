@@ -9,6 +9,6 @@ import org.springframework.stereotype.Service;
 public interface StatusService {
     responPage getAll();
     respon create (StatusIn StatusIn);
-    respon delete (Integer Id_Status);
+//    respon delete (Integer Id_Status);
     respon update (Integer Id_Status, StatusIn StatusIn);
 }

@@ -1,6 +1,5 @@
 package com.example.trangthai.mapper;
 
-import com.example.trangthai.model.dto.RoleDto;
 import com.example.trangthai.model.dto.StatusDto;
 import com.example.trangthai.model.entity.StatusEntity;
 import com.example.trangthai.model.in.StatusIn;
